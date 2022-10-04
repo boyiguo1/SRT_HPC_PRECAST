@@ -13,12 +13,12 @@ colData(spe) |> as.data.frame() |>
 # Sample Subsetting -------------------------------------------------------
 
 # Alternatively, I can just pull slide (the four slide) and array(index of capture area) infromation
-slide_info <- colData(raw_spe) |> as.data.frame() |> 
-  dplyr::select(sample_id, slide, array) |> 
-  distinct()
+# slide_info <- colData(raw_spe) |> as.data.frame() |> 
+#   dplyr::select(sample_id, slide, array) |> 
+#   distinct()
 
 # Subsetting slices from the same donner
-spe_sub <- spe[, colData(spe)$brnum == "Br6423" ]
+spe_sub <- spe[, colData(spe)$brnum == "Br3942" ]
 colData(spe_sub)$spot_id <- colData(spe_sub) |> rownames()
 
 
@@ -34,17 +34,15 @@ preobj <- CreatePRECASTObject(seuList = seuList)
 preobj@seulist
 
 
-pbmc_raw <- read.table(
-  file = system.file('extdata', 'pbmc_raw.txt', package = 'Seurat'),
-  as.is = TRUE
-)
-
-
 PRECASTObj <- AddAdjList(preobj, platform = "Visium")
 ## Add a model setting in advance for a PRECASTObj object. verbose =TRUE helps outputing the
 ## information in the algorithm.
 PRECASTObj <- AddParSetting(PRECASTObj, Sigma_equal = FALSE, coreNum = 1, maxIter = 30, verbose = TRUE)
+
+library(tictoc)
+tic()
 PRECASTObj <- PRECAST(PRECASTObj, K = 15)
+toc()
 resList <- PRECASTObj@resList
 PRECASTObj <- selectModel(PRECASTObj)
 # What is ARI statistics?
@@ -63,7 +61,7 @@ p_tsne <- p_tsne + cowplot::theme_cowplot() + ggplot2::ggtitle("PRECAST")
 
 fnl_spe_sub <- spe_sub
 tmp_colData <- colData(fnl_spe_sub) |> as.data.frame() |> 
-  left_join(seuInt@meta.data |> select(batch, cluster)|> rownames_to_column(var = "spot_id"))
+  left_join(seuInt@meta.data |> select(batch, cluster)|> tibble::rownames_to_column(var = "spot_id"))
 
 colData(fnl_spe_sub)$batch <- tmp_colData$batch
 colData(fnl_spe_sub)$cluster <- tmp_colData$cluster
@@ -71,7 +69,7 @@ colData(fnl_spe_sub)$cluster <- tmp_colData$cluster
 library(ggspavis)
 library(RColorBrewer)
 nb.cols <- 18
-mycolors <- colorRampPalette(brewer.pal(8, "Set2"))(nb.cols)
+mycolors <- colorRampPalette(unname(palette.colors(36, "Polychrome 36")))(nb.cols)
 
-
-plotVisium(fnl_spe_sub, fill = "cluster", palette = mycolors)
+plotVisium(fnl_spe_sub, fill = "cluster", palette = mycolors, alpha = 1)
+ggsave("hbc_plots.png")
