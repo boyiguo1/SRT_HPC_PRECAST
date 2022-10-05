@@ -67,7 +67,7 @@ colData(fnl_spe_sub)$batch <- tmp_colData$batch
 colData(fnl_spe_sub)$cluster <- tmp_colData$cluster
 
 library(ggspavis)
-library(RColorBrewer)
+# library(RColorBrewer)
 nb.cols <- 18
 mycolors <- colorRampPalette(unname(palette.colors(36, "Polychrome 36")))(nb.cols)
 
