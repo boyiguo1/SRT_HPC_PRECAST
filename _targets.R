@@ -72,6 +72,15 @@ list(
   tar_target(
     PRECAST_clusters_Br3942,
     plot_PRECAST_cluster(best_PRECASTObj_Br3942, spe_Br3942)
+  ),
+  
+  tar_target(
+    plot_PRECAST_Br3942,
+    ggsave(filename = "plots/Br3942_PRECAST_Clustering.png",
+           PRECAST_clusters_Br3942,
+           width = 2437,
+           height = 2158,
+           units = "px")
   )
   
   
