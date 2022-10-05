@@ -15,8 +15,6 @@ The claimed benefit of PRECAST is that it provides consistent clustering results
 
 ## Get Started
 
-> The analysis has not been encased in the `targets` workflow, because of the gigantic file size of raw data. We are working on a solution. The analysis code is currently hosted in `R/PRECAST_HPC`.
-
 1.  Download [R](https://www.r-project.org/) and [RStudio
     IDE](https://www.rstudio.com/products/rstudio/download/)
 2.  Install the necessary workflow packages
@@ -30,3 +28,5 @@ The claimed benefit of PRECAST is that it provides consistent clustering results
 4.  Call `targets::tar_make()` in the console to reproduce the analysis
 5.  Use `targets::tar_load(_obj_name_)` in the console to retrieve components in 
 the analysis. We defer to [The {targets} R package user manual](https://books.ropensci.org/targets/) for more information.
+
+> The analysis has been encased in the `targets` workflow. If you doin't have prior background in `targets` workflow and are interested in see an whole example, please see the example  hosted in `R/example_script_of_PRECAST_pipeline.R`.
