@@ -1,0 +1,26 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+.Random.seed|object|caaa0401670d1ec1|||||||||||||||
+best_PRECASTObj_Br3942|stem|47946bca6f3bca5b|9d208b6e502823e7|4a7e06d39606719a|-2010892506||t19270.7865464671s|520056aad9535e6b|45242865|rds|local|vector|||0.001||
+fnl_spe_sub|object|63765147497424c1|||||||||||||||
+mycolors|object|9dcccc0e3ee9a238|||||||||||||||
+nb.cols|object|0def296f86d0c67b|||||||||||||||
+p_sp1|object|9957a533f6ebee50|||||||||||||||
+p_tsne|object|58a7df423b1e4ad3|||||||||||||||
+plot_PRECAST_cluster|function|3d632c524641c705|||||||||||||||
+pre_PRECASTObj_Br3942|stem|356e2ade23e07347|7283323ee714b3c6|403b792ad58f07f9|-591352412||t19270.7759480932s|bcd9a22921640b8c|38234659|rds|local|vector|||62.649|There are pvalues that are exactly 1. There are pvalues that are exactly 1|
+PRECAST_clusters_Br3942|stem|af361e6295a8c74a|9dad13512bb8f5b9|507712cf33bde9fd|-1384446820||t19270.7979314049s|630a8a5e4025a15e|309957568|rds|local|vector|||8.945||
+PRECASTObj|object|d4edb9b75853904e|||||||||||||||
+PRECASTObj_Br3942|stem|c834b27f49bcbc36|12695cf091896104|b32df5c19b404a79|530244058||t19270.7864566105s|df2f7a79d2ffcc13|45313136|rds|local|vector|||900.145||
+preobj|object|5767f893ed1e9a16|||||||||||||||
+prep_PRECASTobj|function|83c58d32d5fe2fb4|||||||||||||||
+raw_spe|stem|440c3f0ee05ba1ae|86676b9c26418008|45dc084e90f18bb4|-1478353839||t19269.49424823s|5c60c122e5702bd7|1805193984|rds|local|vector|||226.689||
+resList|object|d8fce432965cdb80|||||||||||||||
+seuInt|object|b4b88fc0966a9ab7|||||||||||||||
+seuList|object|96390daec56d3477|||||||||||||||
+slide_info|stem|a9f014a04eeaa8eb|918c26cec9379eeb|345425939cc33c01|-756144874||t19270.7656033114s|f7f8608a8895099d|463|rds|local|vector|||0.078||
+spe|object|ee7b4cf16a04c855|||||||||||||||
+spe_Br3942|stem|6b79669a5b13fbd0|e24ba5f7947391e5|725eafd7d3c5b1da|151213868||t19270.7346586675s|6456f04cf76885a5|282680371|rds|local|vector|||4.032||
+spe_sub|object|a215e1a5a4af6671|||||||||||||||
+spe_to_seurat|function|a980b6202ae780f9|||||||||||||||
+spe_to_seuratList|function|1e1fea04072d1d13|||||||||||||||
+tmp_colData|object|e421a166fe35bc13|||||||||||||||

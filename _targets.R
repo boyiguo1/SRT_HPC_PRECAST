@@ -1,23 +1,84 @@
+# Created by use_targets().
+# Follow the comments below to fill in this target script.
+# Then follow the manual to check and run the pipeline:
+#   https://books.ropensci.org/targets/walkthrough.html#inspect-the-pipeline # nolint
+
+# Load packages required to define the pipeline:
 library(targets)
-# This is an example _targets.R file. Every
-# {targets} pipeline needs one.
-# Use tar_script() to create _targets.R and tar_edit()
-# to open it again for editing.
-# Then, run tar_make() to run the pipeline
-# and tar_read(summary) to view the results.
+library(tarchetypes) # Load other packages as needed. # nolint
 
-# Define custom functions and other global objects.
-# This is where you write source(\"R/functions.R\")
-# if you keep your functions in external scripts.
-summ <- function(dataset) {
-  summarize(dataset, mean_x = mean(x))
-}
+# Set target options:
+tar_option_set(
+  packages = c(
+    "SpatialExperiment", "STexampleData",     # Spatial Data
+    "Seurat", "PRECAST",
+    "scater", "ggspavis",
+    "tidyverse"                # data manipulations
+  ), # packages that your targets need to run
+  format = "rds" # default storage format
+  # Set other options as needed.
+)
 
-# Set target-specific options such as packages.
-tar_option_set(packages = "dplyr")
+# tar_make_clustermq() configuration (okay to leave alone):
+options(clustermq.scheduler = "multicore")
 
-# End this file with a list of target objects.
+# tar_make_future() configuration (okay to leave alone):
+# Install packages {{future}}, {{future.callr}}, and {{future.batchtools}} to allow use_targets() to configure tar_make_future() options.
+
+# Run the R scripts in the R/ folder with your custom functions:
+# tar_source()
+source("R/spe_to_seurat.R")
+source("R/prep_PRECASTobj.R")
+source("R/plot_PRECAST_cluster.R")
+# source("other_functions.R") # Source other scripts as needed. # nolint
+
+# Replace the target list below with your own:
 list(
-  tar_target(data, data.frame(x = sample.int(100), y = sample.int(100))),
-  tar_target(summary, summ(data)) # Call your custom functions as needed.
+  tar_target(
+    name = raw_spe,
+    command = readRDS("data/raw_spe.rds")
+  ),
+
+  tar_target(
+    slide_info,
+    colData(raw_spe) |> as.data.frame() |>
+      dplyr::select(brnum, sample_id, slide, array) |>
+      distinct() |> 
+      tibble::remove_rownames() |> 
+      arrange(brnum)
+  ),
+  
+  #  Br3942 -----------------------------------------------------------------  
+  tar_target(
+    spe_Br3942,
+    raw_spe[, colData(raw_spe)$brnum == "Br3942" ]
+  ),
+  
+  tar_target(
+    pre_PRECASTObj_Br3942,
+    spe_Br3942 |> prep_PRECASTobj()
+  ),
+  
+  tar_target(
+    PRECASTObj_Br3942,
+    PRECAST(pre_PRECASTObj_Br3942, K = 15)
+  ),
+  
+  tar_target(
+    best_PRECASTObj_Br3942,
+    selectModel(PRECASTObj_Br3942)
+  ),
+  
+  tar_target(
+    PRECAST_clusters_Br3942,
+    plot_PRECAST_cluster(best_PRECASTObj_Br3942, spe_Br3942)
+  )
+  
+  
+  
+  # 
+  # tar_target(
+  #   name = seuList,
+  #   command =  spe |> spe_to_seuratList()
+  # )
 )

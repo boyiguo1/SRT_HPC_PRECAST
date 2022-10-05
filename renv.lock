@@ -1468,9 +1468,15 @@
     },
     "ggspavis": {
       "Package": "ggspavis",
-      "Version": "1.1.7.9000",
-      "Source": "Bioconductor",
-      "Hash": "f23cc45f7d0766c725b07af979244d25",
+      "Version": "1.1.7",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "boyiguo1",
+      "RemoteRepo": "ggspavis",
+      "RemoteRef": "main",
+      "RemoteSha": "100ed85c9255ae6c64d3ef5732ac22dc0f2a4196",
+      "Hash": "b4520eb9647b0a5aa07b46f15c2030cd",
       "Requirements": [
         "SingleCellExperiment",
         "SpatialExperiment",
