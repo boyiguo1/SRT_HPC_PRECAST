@@ -6,8 +6,5 @@
 .httr-oauth
 .DS_Store
 
-
-data/*.Rdata
-
 # Ignore preview of md files
 *.html
