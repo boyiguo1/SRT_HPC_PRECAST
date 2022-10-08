@@ -1,17 +1,27 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .Random.seed|object|caaa0401670d1ec1|||||||||||||||
 best_PRECASTObj_Br3942|stem|47946bca6f3bca5b|9d208b6e502823e7|4a7e06d39606719a|-2010892506||t19270.7865464671s|520056aad9535e6b|45242865|rds|local|vector|||0.001||
+best_PRECASTObj_Br6423|stem|21e844f2c1baf002|69fae216c65447d4|f4c21760880efc23|-152834534||t19272.9752776733s|688c951eb262b46b|40548340|rds|local|vector|||0.002||
+best_PRECASTObj_Br8325|stem|cba921fd369a10a2|6fe2587a9bb5c1c4|7ba4424947925b6e|-1557529043||t19273.0742981465s|4c022ef52571cc80|43728516|rds|local|vector|||0.003||
 fnl_spe_sub|object|63765147497424c1|||||||||||||||
 mycolors|object|9dcccc0e3ee9a238|||||||||||||||
 nb.cols|object|0def296f86d0c67b|||||||||||||||
 p_sp1|object|9957a533f6ebee50|||||||||||||||
 p_tsne|object|58a7df423b1e4ad3|||||||||||||||
 plot_PRECAST_Br3942|stem|a44a7d0cf0e8e1d4|f1feb8458963791e|4a17d7f49bb8ec67|-1679698235||t19270.8140158703s|bb4e721372eac6a0|88|rds|local|vector|||1.517||
+plot_PRECAST_Br6423|stem|34a8261d575de875|bffe5d5e022655f1|1f00533b79322217|968650698||t19272.9876771353s|bb4e721372eac6a0|88|rds|local|vector|||1.272||
+plot_PRECAST_Br8325|stem|34a8261d575de875|b5be3c815321a3c0|b2c0ec1f7147ee8d|2029542226||t19273.0751948621s|bb4e721372eac6a0|88|rds|local|vector|||1.402||
 plot_PRECAST_cluster|function|3d632c524641c705|||||||||||||||
 pre_PRECASTObj_Br3942|stem|356e2ade23e07347|7283323ee714b3c6|403b792ad58f07f9|-591352412||t19270.7759480932s|bcd9a22921640b8c|38234659|rds|local|vector|||62.649|There are pvalues that are exactly 1. There are pvalues that are exactly 1|
+pre_PRECASTObj_Br6423|stem|6a57d6f109992878|815e79fd12be6d23|3ea8d053d660c319|1925065384||t19272.9270023956s|ea2770b840733bb0|35438470|rds|local|vector|||53.076|There are pvalues that are exactly 1|
+pre_PRECASTObj_Br8325|stem|c90a471fe9df0211|ae6ad01240e24602|5d2b5aed5799526d|-2039366744||t19273.0577365227s|a4124b98b4e9164a|36389106|rds|local|vector|||69.956|There are pvalues that are exactly 1. There are pvalues that are exactly 1|
 PRECAST_clusters_Br3942|stem|af361e6295a8c74a|9dad13512bb8f5b9|507712cf33bde9fd|-1384446820||t19270.7979314049s|630a8a5e4025a15e|309957568|rds|local|vector|||8.945||
+PRECAST_clusters_Br6423|stem|17f19a7ae7bd8a81|dab6f3377105486a|98c0acc51c7efdac|414557940||t19272.9876614167s|9973c848db9c689d|239900082|rds|local|vector|||8.839||
+PRECAST_clusters_Br8325|stem|cad4ae8bccf78116|9866073429888b64|5ae66742e8414a92|601496247||t19273.075177355s|bba2fa4a9709e6e4|294264832|rds|local|vector|||12.325||
 PRECASTObj|object|d4edb9b75853904e|||||||||||||||
 PRECASTObj_Br3942|stem|c834b27f49bcbc36|12695cf091896104|b32df5c19b404a79|530244058||t19270.7864566105s|df2f7a79d2ffcc13|45313136|rds|local|vector|||900.145||
+PRECASTObj_Br6423|stem|e585e8b727ca3626|5997463593afe101|22f7899275ddc83a|-1462918187||t19272.9738534745s|de3cbd29194efc92|40617958|rds|local|vector|||4040.633||
+PRECASTObj_Br8325|stem|a28d8fd15ad932f5|656c2cb939400fd6|2e3ee7bb92191a11|1170603633||t19273.0687805687s|39b88fd84e4c1f85|43815246|rds|local|vector|||946.653||
 preobj|object|5767f893ed1e9a16|||||||||||||||
 prep_PRECASTobj|function|83c58d32d5fe2fb4|||||||||||||||
 raw_spe|stem|440c3f0ee05ba1ae|86676b9c26418008|45dc084e90f18bb4|-1478353839||t19269.49424823s|5c60c122e5702bd7|1805193984|rds|local|vector|||226.689||
@@ -21,6 +31,8 @@ seuList|object|96390daec56d3477|||||||||||||||
 slide_info|stem|a9f014a04eeaa8eb|918c26cec9379eeb|345425939cc33c01|-756144874||t19270.7656033114s|f7f8608a8895099d|463|rds|local|vector|||0.078||
 spe|object|ee7b4cf16a04c855|||||||||||||||
 spe_Br3942|stem|6b79669a5b13fbd0|e24ba5f7947391e5|725eafd7d3c5b1da|151213868||t19270.7346586675s|6456f04cf76885a5|282680371|rds|local|vector|||4.032||
+spe_Br6423|stem|d42802319a226a4d|c1df37aebda59851|725eafd7d3c5b1da|1943349942||t19272.9263018595s|44c1dd11bc134f04|223970545|rds|local|vector|||5.48||
+spe_Br8325|stem|2e021493a2902d13|dd2eecc2a594e06b|725eafd7d3c5b1da|1503789821||t19273.0568394289s|d3d77cd41f698209|267734844|rds|local|vector|||5.499||
 spe_sub|object|a215e1a5a4af6671|||||||||||||||
 spe_to_seurat|function|a980b6202ae780f9|||||||||||||||
 spe_to_seuratList|function|1e1fea04072d1d13|||||||||||||||

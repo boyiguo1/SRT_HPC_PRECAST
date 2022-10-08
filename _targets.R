@@ -81,9 +81,42 @@ list(
            width = 2437,
            height = 2158,
            units = "px")
+  ),
+  
+  #  Br8325 -----------------------------------------------------------------  
+  tar_target(
+    spe_Br8325,
+    raw_spe[, colData(raw_spe)$brnum == "Br8325" ]
+  ),
+  
+  tar_target(
+    pre_PRECASTObj_Br8325,
+    spe_Br8325 |> prep_PRECASTobj()
+  ),
+  
+  tar_target(
+    PRECASTObj_Br8325,
+    PRECAST(pre_PRECASTObj_Br8325, K = 15)
+  ),
+  
+  tar_target(
+    best_PRECASTObj_Br8325,
+    selectModel(PRECASTObj_Br8325)
+  ),
+  
+  tar_target(
+    PRECAST_clusters_Br8325,
+    plot_PRECAST_cluster(best_PRECASTObj_Br8325, spe_Br8325)
+  ),
+  
+  tar_target(
+    plot_PRECAST_Br8325,
+    ggsave(filename = "plots/Br8325_PRECAST_Clustering.png",
+           PRECAST_clusters_Br8325,
+           width = 2437,
+           height = 2158,
+           units = "px")
   )
-  
-  
   
   # 
   # tar_target(
